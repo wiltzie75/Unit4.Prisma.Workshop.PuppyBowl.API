@@ -82,6 +82,7 @@ This activity guides you through building a simple CRUD API using Prisma and Exp
    "scripts": {
       "start:dev": "nodemon server.js"
    }
+   - Create a `server.js` file for the express server and add middleware including `app.use("/api", require("./api"));`
    ```
 1. Create the following `/players` routes. These routes should use the [Prisma Client CRUD operations](https://www.prisma.io/docs/concepts/components/prisma-client/crud) to read and write from the database.
    - `GET /api/players` - returns an array of all players
