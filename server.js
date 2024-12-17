@@ -12,7 +12,7 @@ app.get("/api/players", async (req, res, next) => {
     const players = await prisma.player.findMany();
     res.json(players);
   } catch (error) {
-    next(error);
+    next();
   }
 });
 
@@ -24,7 +24,7 @@ app.post("/api/players", async (req, res, next) => {
     });
     res.json(player);
   } catch (error) {
-    next(error);
+    next();
   }
 });
 
@@ -39,7 +39,7 @@ app.get("/api/players/:id", async (req, res, next) => {
     }
     res.json(player);
   } catch (error) {
-    next(error);
+    next();
   }
 });
 
@@ -53,7 +53,7 @@ app.put("/api/players/:id", async (req, res, next) => {
     });
     res.json(player);
   } catch (error) {
-    next(error);
+    next();
   }
 });
 
@@ -63,7 +63,7 @@ app.delete("/api/players/:id", async (req, res, next) => {
     await prisma.player.delete({ where: { id } });
     res.sendStatus(204);
   } catch (error) {
-    next(error);
+    next();
   }
 });
 
